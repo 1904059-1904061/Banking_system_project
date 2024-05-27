@@ -3,16 +3,11 @@
 public class Main {
     public static void main(String[] args) {
 
-
-
         System.out.println("Hello and welcome!");
-
         System.out.printf("Initializing banking system..");
-
         int totalNumberOfSimulaion = 10;
         OperationsQueue operationsQueue = new OperationsQueue();
         Bank bank = new Bank("123", operationsQueue);
-
         System.out.println("Initializing simulation....");
         Thread simulationThread = new Thread(() -> {
             operationsQueue.addSimulation(totalNumberOfSimulaion);
