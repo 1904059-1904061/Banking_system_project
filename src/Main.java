@@ -12,6 +12,7 @@ public class Main {
         Thread simulationThread = new Thread(() -> {
             operationsQueue.addSimulation(totalNumberOfSimulaion);
         });
+        simulationThread.setName("Simulation Thread");
         simulationThread.start();
 
 
@@ -19,6 +20,7 @@ public class Main {
         Thread depositThread = new Thread(() -> {
             bank.deposit();
         });
+        depositThread.setName("Deposit Thread");
         depositThread.start();
         System.out.println("coompleted");
 
@@ -26,10 +28,9 @@ public class Main {
         Thread withdrawThread = new Thread(() -> {
             bank.withdraw();
         });
+        withdrawThread.setName("Withdraw Thread");
         withdrawThread.start();
         System.out.println("coompleted");
-
-
         System.out.println("coompleted");
 
     }
