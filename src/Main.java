@@ -14,8 +14,6 @@ public class Main {
         });
         simulationThread.setName("Simulation Thread");
         simulationThread.start();
-
-
         System.out.printf("Initializing deposit systen....");
         Thread depositThread = new Thread(() -> {
             bank.deposit();
@@ -32,6 +30,5 @@ public class Main {
         withdrawThread.start();
         System.out.println("coompleted");
         System.out.println("coompleted");
-
     }
 }
