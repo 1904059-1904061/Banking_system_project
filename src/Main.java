@@ -5,7 +5,7 @@ public class Main {
 
         System.out.println("Hello and welcome!");
         System.out.printf("Initializing banking system..");
-        int totalNumberOfSimulaion = 10;
+        int totalNumberOfSimulaion = 20;
         OperationsQueue operationsQueue = new OperationsQueue();
         Bank bank = new Bank("123", operationsQueue);
         System.out.println("Initializing simulation....");

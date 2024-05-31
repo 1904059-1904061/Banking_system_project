@@ -16,6 +16,9 @@ public class Bank {
         // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
         while (true) {
             int amount = operationsQueue.getNextItem();
+            if(amount == -9999){
+                break;
+            }
             if (amount>0) {
              synchronized (this){ 
                 balance =  balance + amount;
@@ -34,8 +37,12 @@ public class Bank {
     public void withdraw() {
         while (true) {
             int amount = operationsQueue.getNextItem();
+            if(amount == -9999){
+                break;
+            }
             if(balance+amount<0){
-                System.out.println("Not enough balance to withdraw "+amount);
+                System.out.println("Transaction canceled Not enough balance to withdraw "+amount);
+                // operationsQueue.add(amount);  Jodi transaction cancel houar por abr queue te add korte hou
             }
             else if (amount<0) {
                 synchronized(this){
