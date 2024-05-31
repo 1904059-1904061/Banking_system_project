@@ -4,7 +4,7 @@ import java.util.ArrayList;
 public class OperationsQueue {
     private final List<Integer> operations = new ArrayList<>();
     // private final List<Integer> arr = new ArrayList<>(Arrays.asList(74,-50,83,-82,-65,90,33,60,33,58)); use this list for testing 
-    public int counter=0;
+    public  int counter=0;
     public synchronized void addSimulation(int totalSimulation) {    
         for (int i = 0; i < totalSimulation; i++) {
             int random = (int) (Math.random() * 200) - 100;

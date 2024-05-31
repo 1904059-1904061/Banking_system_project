@@ -5,7 +5,7 @@ public class Main {
 
         System.out.println("Hello and welcome!");
         System.out.printf("Initializing banking system..");
-        int totalNumberOfSimulaion = 20;
+        int totalNumberOfSimulaion = 10;
         OperationsQueue operationsQueue = new OperationsQueue();
         Bank bank = new Bank("123", operationsQueue);
         System.out.println("Initializing simulation....");
@@ -28,6 +28,14 @@ public class Main {
         });
         withdrawThread.setName("Withdraw Thread");
         withdrawThread.start();
+        
+        try{
+        simulationThread.join();
+        depositThread.join();
+        withdrawThread.join();
+        }catch(InterruptedException e){
+            
+        }
         System.out.println("coompleted");
         System.out.println("coompleted");
     }

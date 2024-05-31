@@ -52,7 +52,7 @@ public class Bank {
             }
             else{
                 operationsQueue.add(amount);
-                System.out.println("operation added back from withdraw "+amount);
+                System.out.println("operation added back from withdraw "+amount);j
             }
         }
     }
