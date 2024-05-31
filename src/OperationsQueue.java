@@ -12,10 +12,11 @@ public class OperationsQueue {
                 random = (int) (Math.random() * 200) - 100;
             }
             operations.add(random);
+            counter++;
             notifyAll();
             System.out.println(i + ". New operation added: " + random);
             try {
-                Thread.sleep((int) (Math.random() * 80));
+                Thread.sleep(100);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

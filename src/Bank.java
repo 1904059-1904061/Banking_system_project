@@ -5,8 +5,9 @@ public class Bank {
     private final OperationsQueue operationsQueue;
 
     private int balance = 0;
-
+    private final Object lock = new Object();
     public Bank(String accountNumber, OperationsQueue operationsQueue) {
+
         this.accountNumber = accountNumber;
         this.operationsQueue = operationsQueue;
     }
@@ -20,9 +21,9 @@ public class Bank {
                 break;
             }
             if (amount>0) {
-             synchronized (this){ 
+             synchronized (lock){ 
                 balance =  balance + amount;
-                System.out.println("Deposited: " + amount + " Balance: " + balance);
+                System.out.println("*******Deposited: " + amount + " Balance: " + balance +"*******");
              }
             }
             else{
@@ -45,14 +46,14 @@ public class Bank {
                 // operationsQueue.add(amount);  Jodi transaction cancel houar por abr queue te add korte hou
             }
             else if (amount<0) {
-                synchronized(this){
+                synchronized(lock){
                 balance =  balance + amount;
-                System.out.println("Withdrawn: " + amount + " Balance: " + balance);
+                System.out.println("*******Withdrawn: " + amount + " Balance: " + balance+"*******");
                 }
             }
             else{
                 operationsQueue.add(amount);
-                System.out.println("operation added back from withdraw "+amount);j
+                System.out.println("operation added back from withdraw "+amount);
             }
         }
     }
